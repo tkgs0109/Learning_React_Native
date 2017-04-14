@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<title>template</title>
+<link href="../../_common/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+<div class="header-contents">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.header-contents -->
+</header>
+<div class="main-wrapper">
+<section>
+
+</section>
+</div><!-- /.main-wrapper -->
+<footer>JavaScript Samples</footer>
+<script>
+var number = Math.floor(Math.random() * 5);
+var answer = parseInt(window.prompt('0~5'));
+var message;
+if(answer === number){
+	message = 'collect';
+} else if (answer < number){
+	message = 'too small!';
+} else if (answer > number){
+	message = 'too big!!!';
+} else {
+	message = 'Enter 0~5 number...';
+}
+window.alert(message);
+</script>
+</body>
+</html>
