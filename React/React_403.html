@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hello World</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+</head>
+<body>
+  <div id="main"></div>
+  <script>
+  var MyComponent = React.createClass({
+    getInitialState: function(){　//(1)
+      return{count: 0}
+    },
+    render: function(){
+      return React.DOM.div( //(2)
+        null,
+        React.DOM.input({
+          type: 'text',
+          onChange: this.doChange
+        }),
+        React.DOM.span(null,this.state.count) //(3)
+      );
+    },
+    doChange: function(e){
+      this.setState({count: e.target.value.length}); //(4)
+    },
+    componentDidMount: function(){
+      console.log('マウントされました');
+    },
+    componentWillUpdate: function(nextProps,nextState){
+      console.log('ステートが次の値に更新されます:',nextState);
+    }
+  });
+
+  ReactDOM.render(
+    React.createElement(MyComponent,{val: 'hoge'}),
+    document.getElementById('main')
+  );
+  </script>
+</body>
+</html>

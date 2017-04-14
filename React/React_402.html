@@ -10,17 +10,21 @@
   <div id="main"></div>
   <script>
   var MyComponent = React.createClass({
-    render: function(){
-      return React.DOM.input({
-        type: 'text',
-        placeholder: '値を入力してEnterを押下',
-        onKeyPress: this.showAlert
-      });
+    getInitialState: function(){　//(1)
+      return{count: 0}
     },
-    showAlert: function(e){
-      if(e.Key === 'Enter' && e.target.value){
-        alert(e.target.value);
-      }
+    render: function(){
+      return React.DOM.div( //(2)
+        null,
+        React.DOM.input({
+          type: 'text',
+          onChange: this.doChange
+        }),
+        React.DOM.span(null,this.state.count) //(3)
+      );
+    },
+    doChange: function(e){
+      this.setState({count: e.target.value.length}); //(4)
     }
   });
 
