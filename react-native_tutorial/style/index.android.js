@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,42 +6,33 @@ import {
   View
 } from 'react-native';
 
-export default class style extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+class LotsOfStyles extends Component{
+  render(){
+    return(
+      <View>
+      <Text style={styles.red}>just red</Text>
+      <Text style={styles.bigblue}>just bigblue</Text>
+      <Text style={[styles.bigblue, styles.red]}>bigblue, then red</Text>
+      <Text style={[styles.red, styles.biggold, styles.red]}>red, then biggold, then red</Text>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  bigblue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  red: {
+    color: 'red',
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  biggold: {
+    color: 'gold',
+    fontWeight: 'normal',
+    fontSize: 100,
   },
 });
 
-AppRegistry.registerComponent('style', () => style);
+AppRegistry.registerComponent('style', () => LotsOfStyles);
