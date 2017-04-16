@@ -1,0 +1,3 @@
+rootProject.name = 'HeightAndWidth2'
+
+include ':app'
