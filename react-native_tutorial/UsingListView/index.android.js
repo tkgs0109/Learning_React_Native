@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { AppRegistry, ListView, Text, View } from 'react-native';
+import {
+  AppRegistry,
+  ListView,
+  Text,
+  View
+} from 'react-native';
 
 class ListViewBasics extends Component {
   constructor(props) {
