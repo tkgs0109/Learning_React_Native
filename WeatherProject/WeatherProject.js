@@ -37,15 +37,15 @@ class WeatherProject extends Component {
                 description={this.state.forecast.description}
                 temp={this.state.forecast.temp}/>;
     return (
-      <View style="{styles.container}">
-      <Text style={styles.welcome}>
-      You input {this.state.zip}.
-      </Text>
-      {content}
-      <TextInput
-      style={styles.input}
-      returnKeyType='go'
-      onSubmitEditing={(event) => this._handleTextChange(event)}/>
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          You input {this.state.zip}.
+        </Text>
+        {content}
+        <TextInput
+          style={styles.input}
+          returnKeyType='go'
+          onSubmitEditing={(event) => this._handleTextChange(event)}/>
       </View>
     );
   }
@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
   input: {
     fontSize: 20,
     borderWidth: 2,
-    height: 40
+    height: 40,
+    width: 200,
   }
 });
 
